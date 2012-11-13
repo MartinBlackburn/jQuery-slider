@@ -1,0 +1,75 @@
+/*----------------------------------------------------------------------------------------------------------------*\
+    BASIC RESET - please use a better one in production
+\*----------------------------------------------------------------------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.pageContainer {
+    padding: 20px;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*\
+    SLIDER
+\*----------------------------------------------------------------------------------------------------------------*/
+.slider {
+    max-width: 980px;
+    margin: 0 auto;
+    
+    position: relative;
+}
+
+.slider .sliderItem {
+	max-width: 980px;
+	display: none;
+	float: left;
+}
+
+.slider .sliderItem:first-child {
+    display: block;
+}
+
+.slider .sliderDisplay {
+    max-width: 980px;
+    
+    overflow: hidden;
+}
+
+.slider .sliderContent {
+    position: relative;
+}
+
+.slider .sliderControls {
+    display: none;
+}
+
+.slider ul {
+    list-style: none;
+    
+    text-align: center;
+}
+
+.slider li {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.slider a {
+    color: #333;
+    text-decoration: none;
+}
+
+.slider a:hover,
+.slider a.selected {
+    color: #73BADE;
+}

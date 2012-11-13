@@ -1,4 +1,6 @@
-jQuery-slider
-=============
+#jQuery slider
 
-A slider written in jQuery to slide between items
+A slider with a sliding aniamation between items
+
+###Notes
+The fader uses jQuery 1.8.2
