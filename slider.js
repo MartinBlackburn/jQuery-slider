@@ -11,8 +11,15 @@ Slider = function(slider)
     var itemWidth = slider.find(".sliderItem").first().outerWidth(true);
     var numItems = slider.find(".sliderItem").size();
     
-    //set width of content
-    slider.find(".sliderContent").width(numItems * itemWidth);
+    //set first slide to selected
+    slides().first().addClass('selected');
+    controls().first().addClass('selected');
+    
+    //calculate slide width and content width
+    calculateSizes();  
+    $(window).on("resize", function() {
+        calculateSizes();         
+    });
     
     //show hidden elements
     slider.find(".sliderItem").css("display", "block");
@@ -57,6 +64,22 @@ Slider = function(slider)
         }
     });
     
+    //calculate sizes
+    function calculateSizes() {
+        //calculate item width
+        slider.find(".sliderItem").css("width", slider.find(".sliderDisplay").first().outerWidth(true));
+        
+        //update slider width
+        itemWidth = slider.find(".sliderItem").first().outerWidth(true);
+        
+        //set slider content width
+        slider.find(".sliderContent").width(numItems * itemWidth);
+        
+        //update content position on resize
+        var currentSlide = slider.find('.sliderItem.selected').index();
+        slider.find('.sliderContent').css("left", (currentSlide * itemWidth * -1)); 
+    }
+    
     //variable for all slides
     function slides() {
         return slider.find(".sliderItem");
@@ -66,10 +89,6 @@ Slider = function(slider)
     function controls() {
         return slider.find(".quick");
     }
-    
-    //set first slide to selected
-    slides().first().addClass('selected');
-    controls().first().addClass('selected');
     
     //auto scroll items
     var timer;
