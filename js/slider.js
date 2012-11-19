@@ -1,5 +1,6 @@
 Slider = function(slider) 
 {   
+    //testing git hook
     //settings
     var slideTime = 1000;
     var viewTime = 6000;
