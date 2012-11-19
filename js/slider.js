@@ -23,10 +23,14 @@ Slider = function(slider)
     
     //show hidden elements
     slider.find(".sliderItem").css("display", "block");
+<<<<<<< HEAD
     
     if(numItems > 1) {
         slider.find(".sliderControls, .next, .prev").css("display", "block");
     }
+=======
+    slider.find(".sliderControls, .next, .prev").css("display", "block");
+>>>>>>> restructured files, moved prev/next buttons, added images for prev/next
     
     //controls
     $(".next").click(function(event) {
