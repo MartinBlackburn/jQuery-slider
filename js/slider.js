@@ -23,7 +23,10 @@ Slider = function(slider)
     
     //show hidden elements
     slider.find(".sliderItem").css("display", "block");
-    slider.find(".sliderControls, .next, .prev").css("display", "block");
+    
+    if(numItems > 1) {
+        slider.find(".sliderControls, .next, .prev").css("display", "block");
+    }
     
     //controls
     $(".next").click(function(event) {
