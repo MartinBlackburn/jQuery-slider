@@ -50,7 +50,7 @@ Slider = function(slider)
         {
             resetTimer();
             
-            var slideAmount = slider.find($(event.delegateTarget).parent()).index() - 1;
+            var slideAmount = slider.find($(event.delegateTarget).parent()).index();
             var currentPosition = slider.find('.sliderItem.selected').index();
             
             if(slideAmount > currentPosition)
