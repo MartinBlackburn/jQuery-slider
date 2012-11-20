@@ -1,6 +1,8 @@
-#jQuery slider
+#jQuery Slider
 
-A slider with a sliding animation between items
+A slider with a sliding effect between items
+
+[View it in action here](http://martinblackburn.github.com/jQuery-slider/)
 
 ###Notes
-The fader uses jQuery 1.8.2
+This was written using jQuery 1.8.2
