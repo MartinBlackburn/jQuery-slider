@@ -11,9 +11,15 @@ Slider = function(slider)
     var itemWidth = slider.find(".sliderItem").first().outerWidth(true);
     var numItems = slider.find(".sliderItem").size();
     
+    //variable for all slides
+    var slides = slider.find(".sliderItem");
+    
+    //variable for all controls
+    var controls = slider.find(".quick");
+    
     //set first slide to selected
-    slides().first().addClass('selected');
-    controls().first().addClass('selected');
+    slides.first().addClass('selected');
+    controls.first().addClass('selected');
     
     //calculate slide width and content width
     calculateSizes();  
@@ -29,21 +35,21 @@ Slider = function(slider)
     }
     
     //controls
-    $(".next").click(function(event) {
+    slider.find(".next").click(function(event) {
         event.preventDefault()
         
         resetTimer();
         slideItem(1);
     });
     
-    $(".prev").click(function(event) {
+    slider.find(".prev").click(function(event) {
         event.preventDefault()
         
         resetTimer();
         slideItem(-1);
     });
     
-    $(".quick").click(function(event) {
+    slider.find(".quick").click(function(event) {
         event.preventDefault()
         
         if(!$(event.delegateTarget).hasClass("selected"))
@@ -81,16 +87,6 @@ Slider = function(slider)
         //update content position on resize
         var currentSlide = slider.find('.sliderItem.selected').index();
         slider.find('.sliderContent').css("left", (currentSlide * itemWidth * -1)); 
-    }
-    
-    //variable for all slides
-    function slides() {
-        return slider.find(".sliderItem");
-    }
-    
-    //variable for all controls
-    function controls() {
-        return slider.find(".quick");
     }
     
     //auto scroll items
@@ -131,8 +127,8 @@ Slider = function(slider)
             }
             
             //remove selected classes
-            slides().removeClass('selected');
-            controls().removeClass('selected');
+            slides.removeClass('selected');
+            controls.removeClass('selected');
             
             //move to new slide
             slider.find(".sliderContent").animate({
@@ -142,8 +138,8 @@ Slider = function(slider)
             });
             
             //add selected classes
-            slides().eq(currentSlide + slideAmount).addClass('selected');
-            controls().eq(currentSlide + slideAmount).addClass('selected');
+            slides.eq(currentSlide + slideAmount).addClass('selected');
+            controls.eq(currentSlide + slideAmount).addClass('selected');
         }
     }
 };
