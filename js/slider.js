@@ -75,11 +75,8 @@ Slider = function(slider)
     
     //calculate sizes
     function calculateSizes() {
-        //calculate item width
-        slider.find(".sliderItem").css("width", slider.find(".sliderDisplay").first().outerWidth(true));
-        
         //update slider width
-        itemWidth = slider.find(".sliderItem").first().outerWidth(true);
+        itemWidth = slider.find(".sliderDisplay").first().outerWidth(true);
         
         //set slider content width
         slider.find(".sliderContent").width(numItems * itemWidth);
